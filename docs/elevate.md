@@ -2,7 +2,7 @@
 
 Hosts elevate raw inputs before compose. This package only accepts **IDs-only** vocab + event summaries.
 
-**Elevation (host-side):** raw → offline stores → packs → aggregate → signal → pattern → trend → **ai**.
+**Elevation (caller-side):** raw → offline stores → packs → aggregate → signal → pattern → trend → **spatial-ai**.
 
 **Deny-list (never send to models):** raw sensors, Parquet, DB paths, unsealed item dumps, free-text corpora.
 

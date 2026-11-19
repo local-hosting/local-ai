@@ -1,5 +1,8 @@
 export { compose } from './compose/compose.js'
 export { mapQuestion, mapReport } from './map/gliner-client.js'
+export { mapQuestionLexicon } from './map/lexicon-question.js'
+export { mapReportLexicon } from './map/lexicon-report.js'
+export { QUESTION_LABELS, REPORT_TYPES } from './types/map.js'
 export { demoVocabFixture } from './vocab/fixture-demo.js'
 export {
   vocabularyToSymbolTable,

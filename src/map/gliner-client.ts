@@ -1,6 +1,7 @@
 import type { SupportedLanguage, Vocabulary } from '../types/vocabulary.js'
 import type { QuestionMapResult, ReportMapResult } from '../types/map.js'
 import { mapQuestionLexicon } from './lexicon-question.js'
+import { mapReportLexicon } from './lexicon-report.js'
 
 export type GlinerClientOptions = {
   baseUrl: string
@@ -55,22 +56,10 @@ export async function mapReport(
       body: JSON.stringify({ text, lang, vocab }),
       signal: controller.signal,
     })
-    if (!res.ok) {
-      return {
-        report_type: 'other',
-        event_ref: null,
-        place_id: null,
-        confidence: 0.3,
-      }
-    }
+    if (!res.ok) return mapReportLexicon(text, lang, vocab)
     return (await res.json()) as ReportMapResult
   } catch {
-    return {
-      report_type: 'other',
-      event_ref: null,
-      place_id: null,
-      confidence: 0.3,
-    }
+    return mapReportLexicon(text, lang, vocab)
   } finally {
     clearTimeout(timer)
   }

@@ -1,2 +1,2 @@
-# Optional: pip install gliner2 when JM clears licence
-# gliner2
+# Apache-2.0 — cleared (same class as Gemma 4 composer)
+gliner2[local]>=2.1.0

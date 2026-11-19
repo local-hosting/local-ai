@@ -1,18 +1,10 @@
-export type QuestionLabel =
-  | 'where_to_go'
-  | 'what_to_do'
-  | 'how_long'
-  | 'is_it_safe_for_kids'
-  | 'is_it_safe_outside'
-  | 'other'
+import catalog from '../map/map-catalog.json' with { type: 'json' }
 
-export type ReportType =
-  | 'worse_here'
-  | 'better_here'
-  | 'sensor_broken'
-  | 'need_help'
-  | 'im_safe'
-  | 'other'
+export const QUESTION_LABELS = catalog.question_labels
+export const REPORT_TYPES = catalog.report_types
+
+export type QuestionLabel = (typeof QUESTION_LABELS)[number]
+export type ReportType = (typeof REPORT_TYPES)[number]
 
 export type QuestionMapResult = {
   label: QuestionLabel
