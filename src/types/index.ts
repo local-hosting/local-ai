@@ -17,6 +17,7 @@ export type {
   PerActorIntent,
 } from './compose.js'
 export type { QuestionMapResult, ReportMapResult, QuestionLabel, ReportType } from './map.js'
+export { QUESTION_LABELS, REPORT_TYPES } from './map.js'
 export type { ManifestDocument, ModelEntry } from './manifest.js'
 export type { HealthReport } from './health.js'
 export type {

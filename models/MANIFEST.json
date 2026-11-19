@@ -42,7 +42,8 @@
       "filename": "gliner2-base",
       "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
       "size_bytes": 0,
-      "status": "candidate"
+      "status": "active",
+      "uri": "https://huggingface.co/fastino/gliner2-base-v1"
     }
   ]
 }

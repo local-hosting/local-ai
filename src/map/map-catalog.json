@@ -1,0 +1,109 @@
+{
+  "question_labels": [
+    "where_to_go",
+    "what_to_do",
+    "how_long",
+    "is_it_safe_for_kids",
+    "is_it_safe_outside",
+    "other"
+  ],
+  "report_types": [
+    "worse_here",
+    "better_here",
+    "sensor_broken",
+    "need_help",
+    "im_safe",
+    "other"
+  ],
+  "question_patterns": {
+    "where_to_go": [
+      "where can i go",
+      "where is safe",
+      "where to go",
+      "où puis-je aller",
+      "adónde puedo ir",
+      "ou puis-je aller",
+      "நான் எங்கே போகலாம்",
+      "எங்கே பாதுகாப்பானது",
+      "waar kan ik heen",
+      "waar is het veilig",
+      "मैं कहाँ जा सकता हूँ",
+      "मैं कहां जा सकता हूं",
+      "我能去哪里",
+      "我該去哪裡",
+      "我能去哪裡",
+      "dove posso andare",
+      "onde posso ir",
+      "לאן אני יכול ללכת",
+      "לאן אפשר ללכת",
+      "إلى أين يمكنني الذهاب",
+      "وين اروح"
+    ],
+    "what_to_do": [
+      "what should i do",
+      "que dois-je faire",
+      "qué debo hacer",
+      "நான் என்ன செய்ய வேண்டும்",
+      "wat moet ik doen",
+      "मुझे क्या करना चाहिए",
+      "我该怎么办",
+      "我該怎麼辦",
+      "cosa dovrei fare",
+      "o que devo fazer",
+      "מה עליי לעשות",
+      "ماذا يجب أن أفعل"
+    ],
+    "how_long": [
+      "how long",
+      "combien de temps",
+      "cuánto tiempo",
+      "எவ்வளவு நேரம்",
+      "hoe lang",
+      "कितना समय",
+      "多久",
+      "quanto tempo",
+      "כמה זמן",
+      "كم من الوقت"
+    ],
+    "is_it_safe_for_kids": [
+      "kids|children|school|enfants|escuela|niños",
+      "குழந்தைகள்|பள்ளி",
+      "kinderen|school",
+      "बच्चे|स्कूल",
+      "孩子|学校|學校",
+      "bambini|scuola",
+      "crianças|escola",
+      "ילדים|בית ספר",
+      "أطفال|مدرسة"
+    ],
+    "is_it_safe_outside": [
+      "go out",
+      "work outside",
+      "dehors",
+      "afuera",
+      "sortir",
+      "வெளியே",
+      "buiten",
+      "बाहर",
+      "外面",
+      "fuori",
+      "fora",
+      "בחוץ",
+      "في الخارج"
+    ],
+    "other": []
+  },
+  "report_cues": [
+    { "type": "worse_here", "any": ["worse", "pire", "peor"] },
+    { "type": "better_here", "any": ["better", "mieux", "mejor"] },
+    { "type": "sensor_broken", "all": ["sensor", "broken"] },
+    { "type": "need_help", "any": ["help", "aide", "ayuda"] },
+    { "type": "im_safe", "any": ["safe", "sûr", "seguro"] }
+  ],
+  "lexicon_confidence": {
+    "question_hit": 0.85,
+    "question_miss": 0.4,
+    "report_hit": 0.75,
+    "report_miss": 0.45
+  }
+}

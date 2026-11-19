@@ -2,7 +2,11 @@
   "name": "@local-hosting/ai",
   "version": "0.1.0",
   "private": true,
-  "description": "Local AI: constrained compose + map behind host elevation (IDs only).",
+  "description": "Local AI: loopback map + constrained compose for many apps (no geo required).",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/local-hosting/ai.git"
+  },
   "type": "module",
   "license": "MPL-2.0",
   "exports": {

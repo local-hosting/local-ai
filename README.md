@@ -1,6 +1,10 @@
 # @local-hosting/ai
 
-**Local AI** inference core: constrained **compose** (llama.cpp) and **map** (GLiNER sidecar), TypeScript-first. Elevation and vocab are upstream; this service accepts **IDs-only** elevated payloads.
+**Local AI** (basic layer): constrained **compose** (llama.cpp) and **map** (GLiNER), TypeScript-first, loopback-only. No geo required.
+
+For place-grounded offline spatial pipelines, use **`@local-hosting/spatial-ai`**, which depends on this package.
+
+Elevation and vocab are upstream; this service accepts **IDs-only** elevated payloads.
 
 ## Ports (loopback)
 
@@ -31,4 +35,4 @@ yarn eval
 
 See `docs/` for elevate wrap, wire trade, ratings, adapters, and `OPEN_ITEMS.md`.
 
-Depends on **`@local-hosting/compose`** (languages + text→frame + re-exported wire codecs). Graph: `ai → compose → wire`. Do not import `@local-hosting/wire` directly.
+Depends on **`@local-hosting/compose`** (languages + text→frame + re-exported wire codecs). Graph: `ai → compose → wire` (and `spatial-ai → ai`). Do not import `@local-hosting/wire` directly.

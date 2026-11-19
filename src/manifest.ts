@@ -32,11 +32,20 @@ export function loadMapperFromManifest(doc: ManifestDocument): ModelEntry | null
   return doc.models.find((m) => m.role === 'mapper') ?? null
 }
 
+function isRemoteModelUri(uri: string | undefined): boolean {
+  if (!uri) return false
+  return uri.startsWith('https://') || uri.startsWith('http://')
+}
+
 export function verifyManifestFiles(doc: ManifestDocument): string[] {
   const errors: string[] = []
   const modelsDir = path.join(repoRoot, 'models')
   for (const entry of doc.models) {
     if (entry.status === 'todo_jm_licence' || entry.status === 'candidate') {
+      continue
+    }
+    // Hub/remote mappers (e.g. GLiNER2) load via URI, not models/<filename>.
+    if (isRemoteModelUri(entry.uri)) {
       continue
     }
     const file = path.join(modelsDir, entry.filename)

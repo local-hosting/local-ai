@@ -5,11 +5,11 @@
 **Thin pipe:** symbol + **vocab tip (content fingerprint)** + compact codes — expand/compress via `@local-hosting/compose` (`src/expand/`); helpers in `src/wire/`. Pack rows → air via `src/wire/pack-delta.ts` (host pack store remains source of truth).
 
 - Simulation envelope: `symbol + base + hex` (`base` = tip fingerprint)
-- Host pack announce (ai only): `peer>>pack@<fingerprint>::…` — tip id aligns with thin `vocab_base`
+- Pack announce (spatial-ai): `peer>>pack@<fingerprint>::…` — tip id aligns with thin `vocab_base`
 - Intent body: symbol `4` + tip + compact action/place/actor codes
 - Rating fields: `itemId^rating=not_here^event_id=…` (from `community_compose_rating` pack item)
 
-Crosswalk + packed codecs live in `@local-hosting/compose`. Host pack-announce grammar stays in ai.
+Crosswalk + packed codecs live in `@local-hosting/compose`. Pack-announce grammar stays in spatial-ai.
 
 ## Fat / thin tip contract
 
