@@ -21,7 +21,7 @@ Elevation and vocab are upstream; this service accepts **IDs-only** elevated pay
 From the **local-hosting** workspace root:
 
 ```bash
-yarn install
+yarn install --ignore-engines
 yarn workspace @local-hosting/local-ai typecheck
 yarn workspace @local-hosting/local-ai test
 yarn workspace @local-hosting/local-ai start
@@ -37,4 +37,4 @@ yarn eval
 
 See `docs/` for elevate wrap, wire trade, ratings, adapters, and `OPEN_ITEMS.md`.
 
-Depends on **`@local-hosting/compose`** (languages + text→frame + re-exported wire codecs). Graph: `ai → compose → wire` (and `spatial-ai → ai`). Do not import `@local-hosting/wire` directly.
+Depends on **`@local-hosting/compose`** (languages + codecs used internally). Graph: `spatial-ai → local-ai → compose → frames`. Import codecs from `@local-hosting/compose` (or `@local-hosting/frames`), not via this package’s barrel.
