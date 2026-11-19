@@ -1,0 +1,48 @@
+{
+  "version": 1,
+  "chosen_composer": "gemma-4-e2b",
+  "models": [
+    {
+      "role": "composer",
+      "name": "qwen3-0.6b-instruct",
+      "params": "0.6B",
+      "quant": "Q4_K_M",
+      "filename": "qwen3-0.6b-instruct-q4_k_m.gguf",
+      "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "size_bytes": 0,
+      "status": "candidate",
+      "uri": ""
+    },
+    {
+      "role": "composer",
+      "name": "qwen3-1.7b-instruct",
+      "params": "1.7B",
+      "quant": "Q4_K_M",
+      "filename": "qwen3-1.7b-instruct-q4_k_m.gguf",
+      "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "size_bytes": 0,
+      "status": "candidate"
+    },
+    {
+      "role": "composer",
+      "name": "gemma-4-e2b",
+      "params": "E2B",
+      "quant": "Q4_K_M",
+      "filename": "gemma-4-e2b-q4_k_m.gguf",
+      "sha256": "71e6e8cb64a76da1a734fb8f6ba389d2784950d9902f5e87244fca0a15190c94",
+      "size_bytes": 3427880384,
+      "status": "candidate",
+      "uri": "https://huggingface.co/lmstudio-community/gemma-4-E2B-it-GGUF/resolve/main/gemma-4-E2B-it-Q4_K_M.gguf"
+    },
+    {
+      "role": "mapper",
+      "name": "gliner2-base",
+      "params": "~200M",
+      "quant": "fp32",
+      "filename": "gliner2-base",
+      "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "size_bytes": 0,
+      "status": "candidate"
+    }
+  ]
+}

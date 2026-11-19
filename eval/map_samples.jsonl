@@ -1,0 +1,73 @@
+{"kind":"question","text":"Où puis-je aller?","lang":"fr","expected_label":"where_to_go"}
+{"kind":"question","text":"Où puis-je aller?","lang":"fr","expected_label":"where_to_go"}
+{"kind":"question","text":"Où puis-je aller?","lang":"fr","expected_label":"where_to_go"}
+{"kind":"question","text":"Où puis-je aller?","lang":"fr","expected_label":"where_to_go"}
+{"kind":"question","text":"Où puis-je aller?","lang":"fr","expected_label":"where_to_go"}
+{"kind":"question","text":"¿Adónde puedo ir?","lang":"es","expected_label":"where_to_go"}
+{"kind":"question","text":"¿Adónde puedo ir?","lang":"es","expected_label":"where_to_go"}
+{"kind":"question","text":"¿Adónde puedo ir?","lang":"es","expected_label":"where_to_go"}
+{"kind":"question","text":"¿Adónde puedo ir?","lang":"es","expected_label":"where_to_go"}
+{"kind":"question","text":"¿Adónde puedo ir?","lang":"es","expected_label":"where_to_go"}
+{"kind":"question","text":"What should I do?","lang":"en","expected_label":"what_to_do"}
+{"kind":"question","text":"What should I do?","lang":"en","expected_label":"what_to_do"}
+{"kind":"question","text":"What should I do?","lang":"en","expected_label":"what_to_do"}
+{"kind":"question","text":"What should I do?","lang":"en","expected_label":"what_to_do"}
+{"kind":"question","text":"What should I do?","lang":"en","expected_label":"what_to_do"}
+{"kind":"question","text":"How long will this last?","lang":"en","expected_label":"how_long"}
+{"kind":"question","text":"How long will this last?","lang":"en","expected_label":"how_long"}
+{"kind":"question","text":"How long will this last?","lang":"en","expected_label":"how_long"}
+{"kind":"question","text":"How long will this last?","lang":"en","expected_label":"how_long"}
+{"kind":"question","text":"How long will this last?","lang":"en","expected_label":"how_long"}
+{"kind":"question","text":"Is it safe for kids?","lang":"en","expected_label":"is_it_safe_for_kids"}
+{"kind":"question","text":"Is it safe for kids?","lang":"en","expected_label":"is_it_safe_for_kids"}
+{"kind":"question","text":"Is it safe for kids?","lang":"en","expected_label":"is_it_safe_for_kids"}
+{"kind":"question","text":"Is it safe for kids?","lang":"en","expected_label":"is_it_safe_for_kids"}
+{"kind":"question","text":"Is it safe for kids?","lang":"en","expected_label":"is_it_safe_for_kids"}
+{"kind":"question","text":"Can I work outside?","lang":"en","expected_label":"is_it_safe_outside"}
+{"kind":"question","text":"Can I work outside?","lang":"en","expected_label":"is_it_safe_outside"}
+{"kind":"question","text":"Can I work outside?","lang":"en","expected_label":"is_it_safe_outside"}
+{"kind":"question","text":"Can I work outside?","lang":"en","expected_label":"is_it_safe_outside"}
+{"kind":"question","text":"Can I work outside?","lang":"en","expected_label":"is_it_safe_outside"}
+{"kind":"question","text":"நான் எங்கே போகலாம்?","lang":"ta","expected_label":"where_to_go"}
+{"kind":"question","text":"நான் என்ன செய்ய வேண்டும்?","lang":"ta","expected_label":"what_to_do"}
+{"kind":"question","text":"எவ்வளவு நேரம்?","lang":"ta","expected_label":"how_long"}
+{"kind":"question","text":"குழந்தைகளுக்கு பாதுகாப்பானதா?","lang":"ta","expected_label":"is_it_safe_for_kids"}
+{"kind":"question","text":"வெளியே வேலை செய்யலாமா?","lang":"ta","expected_label":"is_it_safe_outside"}
+{"kind":"question","text":"Waar kan ik heen?","lang":"nl","expected_label":"where_to_go"}
+{"kind":"question","text":"मैं कहाँ जा सकता हूँ?","lang":"hi","expected_label":"where_to_go"}
+{"kind":"question","text":"我能去哪里？","lang":"zh-Hans","expected_label":"where_to_go"}
+{"kind":"question","text":"我能去哪裡？","lang":"zh-Hant","expected_label":"where_to_go"}
+{"kind":"question","text":"Dove posso andare?","lang":"it","expected_label":"where_to_go"}
+{"kind":"question","text":"Onde posso ir?","lang":"pt","expected_label":"where_to_go"}
+{"kind":"question","text":"לאן אני יכול ללכת?","lang":"he","expected_label":"where_to_go"}
+{"kind":"question","text":"إلى أين يمكنني الذهاب؟","lang":"ar","expected_label":"where_to_go"}
+{"kind":"report","text":"smoke worse here at school","lang":"fr"}
+{"kind":"report","text":"je vais bien","lang":"es"}
+{"kind":"report","text":"smoke worse here at school","lang":"en"}
+{"kind":"report","text":"je vais bien","lang":"fr"}
+{"kind":"report","text":"smoke worse here at school","lang":"es"}
+{"kind":"report","text":"je vais bien","lang":"en"}
+{"kind":"report","text":"smoke worse here at school","lang":"fr"}
+{"kind":"report","text":"je vais bien","lang":"es"}
+{"kind":"report","text":"smoke worse here at school","lang":"en"}
+{"kind":"report","text":"je vais bien","lang":"fr"}
+{"kind":"report","text":"smoke worse here at school","lang":"es"}
+{"kind":"report","text":"je vais bien","lang":"en"}
+{"kind":"report","text":"smoke worse here at school","lang":"fr"}
+{"kind":"report","text":"je vais bien","lang":"es"}
+{"kind":"report","text":"smoke worse here at school","lang":"en"}
+{"kind":"report","text":"je vais bien","lang":"fr"}
+{"kind":"report","text":"smoke worse here at school","lang":"es"}
+{"kind":"report","text":"je vais bien","lang":"en"}
+{"kind":"report","text":"smoke worse here at school","lang":"fr"}
+{"kind":"report","text":"je vais bien","lang":"es"}
+{"kind":"report","text":"smoke worse here at school","lang":"en"}
+{"kind":"report","text":"je vais bien","lang":"fr"}
+{"kind":"report","text":"smoke worse here at school","lang":"es"}
+{"kind":"report","text":"je vais bien","lang":"en"}
+{"kind":"report","text":"smoke worse here at school","lang":"fr"}
+{"kind":"report","text":"je vais bien","lang":"es"}
+{"kind":"report","text":"smoke worse here at school","lang":"en"}
+{"kind":"report","text":"je vais bien","lang":"fr"}
+{"kind":"report","text":"smoke worse here at school","lang":"es"}
+{"kind":"report","text":"je vais bien","lang":"en"}

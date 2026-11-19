@@ -1,0 +1,14 @@
+node_modules/
+dist/
+.venv/
+services/gliner/.venv/
+__pycache__/
+*.gguf
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
+.logs/
+.DS_Store
