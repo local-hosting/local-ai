@@ -3,15 +3,19 @@ import type { PerActorIntent } from '../types/compose.js'
 
 export type ValidateOutputResult = { ok: true } | { ok: false; reason: string }
 
-function inList(id: string, list: string[]): boolean {
-  return list.includes(id)
-}
-
+/**
+ * Authoritative post-model gate. JSON schema (`dynamic-schema`) constrains llama.cpp
+ * when available; this still enforces duplicate actors + severity vs band, and
+ * re-checks candidate membership when the backend ignores schema.
+ */
 export function validateComposeOutput(
   event: EventSummary,
   per_actor: PerActorIntent[],
 ): ValidateOutputResult {
   const actorSet = new Set(event.actors)
+  const actionSet = new Set(event.candidate_action_ids)
+  const placeSet = new Set(event.candidate_place_ids)
+  const resourceSet = new Set(event.candidate_resource_ids)
   const seenActors = new Set<string>()
 
   for (const row of per_actor) {
@@ -28,17 +32,17 @@ export function validateComposeOutput(
     }
 
     for (const actionId of row.action_ids) {
-      if (!inList(actionId, event.candidate_action_ids)) {
+      if (!actionSet.has(actionId)) {
         return { ok: false, reason: `invalid action_id ${actionId}` }
       }
     }
     for (const placeId of row.place_ids ?? []) {
-      if (!inList(placeId, event.candidate_place_ids)) {
+      if (!placeSet.has(placeId)) {
         return { ok: false, reason: `invalid place_id ${placeId}` }
       }
     }
     for (const resourceId of row.resource_ids ?? []) {
-      if (!inList(resourceId, event.candidate_resource_ids)) {
+      if (!resourceSet.has(resourceId)) {
         return { ok: false, reason: `invalid resource_id ${resourceId}` }
       }
     }

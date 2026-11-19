@@ -13,7 +13,6 @@ export type { EventSummary, EventReport, TrendKind } from './event-summary.js'
 export type {
   ComposeRequest,
   ComposeIntent,
-  ComposeProvenance,
   PerActorIntent,
 } from './compose.js'
 export type { QuestionMapResult, ReportMapResult, QuestionLabel, ReportType } from './map.js'

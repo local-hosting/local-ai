@@ -34,5 +34,3 @@ export type ComposeIntent = {
   vocab_tip: string
   latency_ms: number
 }
-
-export type ComposeProvenance = ComposeIntent

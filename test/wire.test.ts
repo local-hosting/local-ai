@@ -14,7 +14,6 @@ import type { EventSummary } from '../src/types/event-summary.js'
 describe('compact air frames', () => {
   it('intent frame roundtrip', () => {
     const frame = {
-      kind: 'intent' as const,
       vocab_base: '0.2.0',
       event_code: 1,
       band: 3 as const,

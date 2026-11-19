@@ -12,7 +12,6 @@ export function composeIntentToWireFrame(
   if (!row) return null
   const event_code = codeForId(vocab, intent.event_ref) ?? 1
   return {
-    kind: 'intent',
     vocab_base: intent.vocab_tip || vocabularyTip(vocab),
     event_code,
     band: row.severity,
