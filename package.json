@@ -5,7 +5,7 @@
   "description": "Local AI: loopback map + constrained compose for many apps (no geo required).",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/local-hosting/ai.git"
+    "url": "git+https://github.com/local-hosting/local-ai.git"
   },
   "type": "module",
   "license": "UNLICENSED",
