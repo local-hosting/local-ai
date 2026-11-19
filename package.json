@@ -16,6 +16,7 @@
     "build": "tsc -p tsconfig.build.json",
     "clean": "rm -rf dist",
     "typecheck": "tsc --noEmit -p tsconfig.json",
+    "prevalidate": "yarn workspace @local-hosting/compose build",
     "validate": "yarn typecheck",
     "test": "vitest run",
     "pretest": "yarn workspace @local-hosting/compose build",
