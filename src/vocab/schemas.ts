@@ -23,8 +23,17 @@ export const vocabularySchema = z.object({
   languages: z.array(langEnum),
   events: z.array(labeledId),
   actions: z.array(labeledId.extend({ events: z.array(z.string()) })),
-  places: z.array(labeledId.extend({ type: z.string(), h3: z.string() })),
-  resources: z.array(labeledId.extend({ place_id: z.string() })),
+  places: z.array(
+    labeledId.extend({ type: z.string(), h3: z.string(), wire_code: z.string().optional() }),
+  ),
+  resources: z.array(
+    labeledId.extend({
+      place_id: z.string().optional(),
+      wire_code: z.string().optional(),
+      category: z.string().optional(),
+      subcategory: z.string().optional(),
+    }),
+  ),
   actors: z.array(labeledId),
   defaults: z.record(z.record(z.array(z.string()))),
 })
@@ -64,7 +73,19 @@ export const communityRatingSchema = z.object({
   actor_id: z.string().optional(),
 })
 
-export const composeRequestSchema = z.object({
-  vocab: vocabularySchema,
-  event: eventSummarySchema,
-})
+const packModeSchema = z.enum(['daily', 'resilience'])
+
+export const composeRequestSchema = z
+  .object({
+    vocab: vocabularySchema.optional(),
+    vocab_tip: z.string().min(1).optional(),
+    pack_mode: packModeSchema.optional(),
+    event: eventSummarySchema,
+  })
+  .refine(
+    (data) =>
+      data.vocab !== undefined ||
+      data.vocab_tip !== undefined ||
+      data.pack_mode !== undefined,
+    { message: 'vocab, vocab_tip, or pack_mode required' },
+  )

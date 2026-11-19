@@ -1,6 +1,7 @@
 import type { SupportedLanguage, Vocabulary } from '../types/vocabulary.js'
 import type { QuestionMapResult, ReportMapResult } from '../types/map.js'
 import { mapQuestionLexicon } from './lexicon-question.js'
+import { mapReportComposeFirst } from './map-compose-first.js'
 import { mapReportLexicon } from './lexicon-report.js'
 
 export type GlinerClientOptions = {
@@ -46,6 +47,8 @@ export async function mapReport(
   vocab: Vocabulary,
   options: GlinerClientOptions,
 ): Promise<ReportMapResult> {
+  const fromCompose = mapReportComposeFirst(text, lang, vocab)
+  if (fromCompose) return fromCompose
   const root = normalizeLoopback(options.baseUrl)
   const controller = new AbortController()
   const timer = setTimeout(() => controller.abort(), options.timeoutMs)

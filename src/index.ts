@@ -6,6 +6,12 @@ export { QUESTION_LABELS, REPORT_TYPES } from './types/map.js'
 export { SUPPORTED_LANGUAGES, type SupportedLanguage } from './types/vocabulary.js'
 export { demoVocabFixture } from './vocab/fixture-demo.js'
 export {
+  getSessionVocab,
+  registerSessionVocab,
+  resolveSessionVocab,
+  type SessionVocabInput,
+} from './vocab/session-vocab.js'
+export {
   vocabularySchema,
   eventSummarySchema,
   composeRequestSchema,
