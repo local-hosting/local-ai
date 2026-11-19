@@ -17,13 +17,14 @@
     "build": "tsc -p tsconfig.build.json",
     "clean": "rm -rf dist",
     "typecheck": "tsc --noEmit -p tsconfig.json",
-    "prevalidate": "yarn workspace @local-hosting/compose build",
+    "prevalidate": "yarn workspace @local-hosting/compose build && yarn workspace @local-hosting/vocab build",
     "validate": "yarn typecheck",
     "test": "vitest run",
     "pretest": "yarn workspace @local-hosting/compose build",
     "ci": "yarn validate && yarn test",
     "test:watch": "vitest",
     "start": "node --import tsx src/api/start-server.ts",
+    "start:boot": "sh runtime/boot.sh",
     "eval": "node --import tsx eval/run-eval.ts"
   },
   "dependencies": {
