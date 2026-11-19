@@ -1,4 +1,4 @@
-# Open items (`@local-hosting/ai`)
+# Open items (`@local-hosting/local-ai`)
 
 - GLiNER quality confirmation across SUPPORTED_LANGUAGES (licence cleared: GLiNER2 Apache-2.0; `gliner2[local]` in sidecar).
 - Eval acceptable-actions ownership / review process.

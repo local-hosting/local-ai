@@ -5,6 +5,11 @@ export { mapReportLexicon } from './map/lexicon-report.js'
 export { QUESTION_LABELS, REPORT_TYPES } from './types/map.js'
 export { demoVocabFixture } from './vocab/fixture-demo.js'
 export {
+  vocabularySchema,
+  eventSummarySchema,
+  composeRequestSchema,
+} from './vocab/schemas.js'
+export {
   vocabularyToSymbolTable,
   vocabularyToVocabSnapshot,
   vocabularyToVocabStore,

@@ -1,5 +1,5 @@
 {
-  "name": "@local-hosting/ai",
+  "name": "@local-hosting/local-ai",
   "version": "0.1.0",
   "private": true,
   "description": "Local AI: loopback map + constrained compose for many apps (no geo required).",

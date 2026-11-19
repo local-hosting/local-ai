@@ -1,4 +1,4 @@
-# @local-hosting/ai
+# @local-hosting/local-ai
 
 **Repo:** [local-hosting/local-ai](https://github.com/local-hosting/local-ai)
 
@@ -22,9 +22,9 @@ From the **local-hosting** workspace root:
 
 ```bash
 yarn install
-yarn workspace @local-hosting/ai typecheck
-yarn workspace @local-hosting/ai test
-yarn workspace @local-hosting/ai start
+yarn workspace @local-hosting/local-ai typecheck
+yarn workspace @local-hosting/local-ai test
+yarn workspace @local-hosting/local-ai start
 ```
 
 Or from this package after a root `yarn install`:
