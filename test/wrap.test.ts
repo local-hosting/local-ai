@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 import { assertElevatedInput } from '../src/wrap/deny-list.js'
-import { buildLockerRatingItem } from '../src/wrap/ratings-locker-stub.js'
+import { buildCommunityComposeRatingItem } from '../src/wrap/community-pack-items.js'
 
 describe('wrap', () => {
   it('denies raw sensors', () => {
@@ -9,9 +9,10 @@ describe('wrap', () => {
     )
   })
 
-  it('builds locker rating item', () => {
-    const item = buildLockerRatingItem({
-      community_locker_did: 'did:locker:demo',
+  it('builds community compose rating item', () => {
+    const item = buildCommunityComposeRatingItem({
+      locker_did: 'did:locker:demo',
+      pack_id: 'community-compose',
       rating: {
         event_id: 'e1',
         kind: 'not_here',

@@ -1,15 +1,11 @@
 /** Simulation-style: symbol + base + hex payload */
 export type { SymbolEnvelope } from '@local-hosting/compose'
+import type { IntentBody } from '@local-hosting/compose'
+export type { IntentBody }
 
-/** Minimal compose intent on air (compact codes when available). */
-export type IntentFrame = {
-  kind: 'intent'
+/** Compose intent on air — wire `IntentBody` + vocab tip. */
+export type IntentFrame = IntentBody & {
   vocab_base: string
-  event_code: number
-  band: 1 | 2 | 3 | 4
-  actor_codes: number[]
-  action_codes: number[]
-  place_codes: number[]
 }
 
 /** Host pack-announcement frame (sync adapters — not @local-hosting/compose). */
