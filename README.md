@@ -1,5 +1,7 @@
 # @local-hosting/ai
 
+**Repo:** [local-hosting/local-ai](https://github.com/local-hosting/local-ai)
+
 **Local AI** (basic layer): constrained **compose** (llama.cpp) and **map** (GLiNER), TypeScript-first, loopback-only. No geo required.
 
 For place-grounded offline spatial pipelines, use **`@local-hosting/spatial-ai`**, which depends on this package.
