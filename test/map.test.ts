@@ -50,23 +50,23 @@ describe.each(DOMAIN_CORPORA)('map report lexicon (%s corpus)', (corpusId) => {
       const mapped = mapReportLexicon(row.text, row.lang as SupportedLanguage, demoVocabFixture)
       expect(REPORT_TYPES).toContain(mapped.report_type)
       expect(mapped.confidence).toBeGreaterThanOrEqual(0)
+      if (row.expect_map?.report_type) {
+        expect(mapped.report_type).toBe(row.expect_map.report_type)
+      }
     })
   }
 })
 
 describe('map question lexicon (resilience-synthetic bench)', () => {
-  const cases: Array<[string, 'en' | 'es' | 'fr', string]> = [
-    ['Where is the nearest shelter open right now?', 'en', 'where_to_go'],
-    ['Any open evacuation center near me?', 'en', 'where_to_go'],
-    ['flash flood warning — should we leave?', 'en', 'what_to_do'],
-    ['Can I drive through the water on 3rd?', 'en', 'is_it_safe_outside'],
-    ['¿Dónde hay refugio cerca?', 'es', 'where_to_go'],
-    ['¿Cuánto durará la alerta?', 'es', 'how_long'],
-    ['Où est le refuge le plus proche?', 'fr', 'where_to_go'],
-  ]
-  for (const [text, lang, label] of cases) {
-    it(`${lang}: ${text.slice(0, 48)}…`, () => {
-      expect(mapQuestionLexicon(text, lang).label).toBe(label)
+  const cases = readMessageCorpus('resilience-synthetic')
+    .messages.filter(
+      (m) => m.kind === 'question' && m.expected_map_label && m.lang !== 'zh-Hans',
+    )
+    .slice(0, 8)
+
+  for (const row of cases) {
+    it(`${row.id} (${row.lang})`, () => {
+      expect(mapQuestionLexicon(row.text, row.lang).label).toBe(row.expected_map_label)
     })
   }
 })

@@ -4,8 +4,9 @@ import { validateComposeOutput } from './validate-output.js'
 import { maybeRulesOnly } from '../wrap/maybe-rules-only.js'
 import type { ComposeIntent, ComposeRequest } from '../types/compose.js'
 import {
-  loadActiveComposerFromManifest,
+  composerLlamaAlias,
   readManifest,
+  resolveComposer,
 } from '../manifest.js'
 import { vocabularyTip } from '../vocab/symbol-table.js'
 
@@ -13,6 +14,11 @@ export type ComposeOptions = {
   llamaBaseUrl: string
   timeoutMs: number
   rulesOnlyForce?: boolean
+  /**
+   * Pin a MANIFEST composer by name (eval / A/B).
+   * When omitted: `LOCAL_AI_COMPOSE_MODEL` → `chosen_composer` → active.
+   */
+  composerName?: string
 }
 
 export async function compose(
@@ -34,7 +40,7 @@ export async function compose(
     })
   }
 
-  const model = loadActiveComposerFromManifest(manifest)
+  const model = resolveComposer(manifest, { name: options.composerName })
   if (!model) {
     return rulesFallbackIntent(req.vocab, req.event, {
       latency_ms: Date.now() - t0,
@@ -43,7 +49,7 @@ export async function compose(
 
   const llama = await callLlamaCompose(req, model, {
     baseUrl: options.llamaBaseUrl,
-    model: model.name,
+    model: composerLlamaAlias(model),
     timeoutMs: options.timeoutMs,
   })
 

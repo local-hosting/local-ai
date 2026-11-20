@@ -1,6 +1,7 @@
 {
   "version": 1,
-  "chosen_composer": "gemma-4-e2b",
+  "chosen_composer": "qwen3-0.6b-instruct",
+  "fallback_composer": "qwen2.5-1.5b-instruct",
   "models": [
     {
       "role": "composer",
@@ -8,10 +9,32 @@
       "params": "0.6B",
       "quant": "Q4_K_M",
       "filename": "qwen3-0.6b-instruct-q4_k_m.gguf",
-      "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
-      "size_bytes": 0,
+      "sha256": "9acfc1e001311f34b4252001b626f2e466d592a42065f66571bff3790d4e1b14",
+      "size_bytes": 484220320,
+      "status": "active",
+      "uri": "https://huggingface.co/bartowski/Qwen_Qwen3-0.6B-GGUF/resolve/main/Qwen_Qwen3-0.6B-Q4_K_M.gguf"
+    },
+    {
+      "role": "composer",
+      "name": "qwen2.5-1.5b-instruct",
+      "params": "1.5B",
+      "quant": "Q4_K_M",
+      "filename": "qwen2.5-1.5b-instruct-q4_k_m.gguf",
+      "sha256": "1adf0b11065d8ad2e8123ea110d1ec956dab4ab038eab665614adba04b6c3370",
+      "size_bytes": 986048768,
       "status": "candidate",
-      "uri": ""
+      "uri": "https://huggingface.co/bartowski/Qwen2.5-1.5B-Instruct-GGUF/resolve/main/Qwen2.5-1.5B-Instruct-Q4_K_M.gguf"
+    },
+    {
+      "role": "composer",
+      "name": "gemma-2-2b-it",
+      "params": "2B",
+      "quant": "Q4_K_M",
+      "filename": "gemma-2-2b-it-q4_k_m.gguf",
+      "sha256": "e0aee85060f168f0f2d8473d7ea41ce2f3230c1bc1374847505ea599288a7787",
+      "size_bytes": 1708582752,
+      "status": "candidate",
+      "uri": "https://huggingface.co/lmstudio-community/gemma-2-2b-it-GGUF/resolve/main/gemma-2-2b-it-Q4_K_M.gguf"
     },
     {
       "role": "composer",
@@ -21,7 +44,41 @@
       "filename": "qwen3-1.7b-instruct-q4_k_m.gguf",
       "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
       "size_bytes": 0,
-      "status": "candidate"
+      "status": "candidate",
+      "uri": "https://huggingface.co/bartowski/Qwen_Qwen3-1.7B-GGUF/resolve/main/Qwen_Qwen3-1.7B-Q4_K_M.gguf"
+    },
+    {
+      "role": "composer",
+      "name": "qwen3-8b-instruct",
+      "params": "8B",
+      "quant": "Q4_K_M",
+      "filename": "qwen3-8b-instruct-q4_k_m.gguf",
+      "sha256": "54fffa050078e984116639c83dfb64b5aa6d4cd474e018b076777c632bbccccd",
+      "size_bytes": 5027784224,
+      "status": "candidate",
+      "uri": "https://huggingface.co/bartowski/Qwen_Qwen3-8B-GGUF/resolve/main/Qwen_Qwen3-8B-Q4_K_M.gguf"
+    },
+    {
+      "role": "composer",
+      "name": "llama-3.2-3b-instruct",
+      "params": "3B",
+      "quant": "Q4_K_M",
+      "filename": "llama-3.2-3b-instruct-q4_k_m.gguf",
+      "sha256": "6c1a2b41161032677be168d354123594c0e6e67d2b9227c84f296ad037c728ff",
+      "size_bytes": 2019377696,
+      "status": "candidate",
+      "uri": "https://huggingface.co/bartowski/Llama-3.2-3B-Instruct-GGUF/resolve/main/Llama-3.2-3B-Instruct-Q4_K_M.gguf"
+    },
+    {
+      "role": "composer",
+      "name": "phi-3.5-mini-instruct",
+      "params": "3.8B",
+      "quant": "Q4_K_M",
+      "filename": "phi-3.5-mini-instruct-q4_k_m.gguf",
+      "sha256": "e4165e3a71af97f1b4820da61079826d8752a2088e313af0c7d346796c38eff5",
+      "size_bytes": 2393232672,
+      "status": "candidate",
+      "uri": "https://huggingface.co/bartowski/Phi-3.5-mini-instruct-GGUF/resolve/main/Phi-3.5-mini-instruct-Q4_K_M.gguf"
     },
     {
       "role": "composer",

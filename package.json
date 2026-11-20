@@ -28,6 +28,7 @@
     "test:watch": "vitest",
     "start": "node --import tsx src/api/start-server.ts",
     "start:boot": "sh runtime/boot.sh",
+    "resolve:composer": "node --import tsx scripts/resolve-composer.ts",
     "eval": "node --import tsx eval/run-eval.ts"
   },
   "dependencies": {

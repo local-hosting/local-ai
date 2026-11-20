@@ -89,6 +89,8 @@ describe('compose', () => {
 describe('manifest', () => {
   it('exposes composer name and sha', () => {
     const doc = readManifest()
+    expect(doc.chosen_composer).toBe('qwen3-0.6b-instruct')
+    expect(doc.fallback_composer).toBe('qwen2.5-1.5b-instruct')
     const composer = doc.models.find((m) => m.name === doc.chosen_composer)
     expect(composer?.sha256).toBeTruthy()
     expect(composer?.filename).toBeTruthy()

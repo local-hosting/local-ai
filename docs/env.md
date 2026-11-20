@@ -13,9 +13,10 @@ All operational names use the **`LOCAL_AI_`** prefix.
 | `LOCAL_AI_START_LLAMA` | `1` runs llama in `boot.sh` | `1` |
 | `LOCAL_AI_LLAMA_PORT` | Loopback llama-server port | `8080` |
 | `LOCAL_AI_LLAMA_BASE_URL` | Gateway → llama base URL | derived from port |
-| `LOCAL_AI_GGUF_PATH` | On-disk weights | `/models/model.gguf` in images |
+| `LOCAL_AI_COMPOSE_MODEL` | Composer name from `models/MANIFEST.json` | `chosen_composer` (Pi: `qwen3-0.6b-instruct`) |
+| `LOCAL_AI_GGUF_PATH` | On-disk weights (skips MANIFEST resolve) | resolved from MANIFEST / `/models/model.gguf` in images |
 | `LOCAL_AI_GGUF_URL` | First-boot download URL | unset |
-| `LOCAL_AI_MODEL_ALIAS` | llama `-a` alias | `qwen2.5-7b` |
+| `LOCAL_AI_MODEL_ALIAS` | llama `-a` alias | derived from resolved composer |
 | `LOCAL_AI_CTX_SIZE` | Context tokens | `8192` |
 | `LOCAL_AI_N_PARALLEL` | llama `-np` | `1` |
 | `LOCAL_AI_THREADS` | llama `-t` | cgroup / `nproc` |

@@ -1,4 +1,4 @@
-import { readFileSync, writeFileSync } from 'node:fs'
+import { readFileSync } from 'node:fs'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { compose } from '../src/compose/compose.js'
@@ -77,9 +77,6 @@ async function main(): Promise<void> {
   }
 
   const doc = readManifest()
-  const manifestPath = path.join(repoRoot, 'models', 'MANIFEST.json')
-  doc.chosen_composer = doc.chosen_composer ?? 'gemma-4-e2b'
-  writeFileSync(manifestPath, `${JSON.stringify(doc, null, 2)}\n`)
 
   console.log('eval summary')
   console.table({
@@ -89,7 +86,8 @@ async function main(): Promise<void> {
       ? (mapCorrect / questions.length) * 100
       : 0,
     median_latency_ms: latencies.sort((a, b) => a - b)[Math.floor(latencies.length / 2)] ?? 0,
-    chosen_composer: doc.chosen_composer,
+    chosen_composer: doc.chosen_composer ?? null,
+    fallback_composer: doc.fallback_composer ?? null,
   })
 }
 

@@ -1,8 +1,26 @@
 #!/bin/sh
 set -eu
 
-gguf_path="${LOCAL_AI_GGUF_PATH:-/models/model.gguf}"
-alias="${LOCAL_AI_MODEL_ALIAS:-qwen2.5-7b}"
+ROOT="$(CDPATH= cd -- "$(dirname "$0")/.." && pwd)"
+
+# Dev checkout: resolve from MANIFEST / LOCAL_AI_COMPOSE_MODEL when path unset.
+# Images usually set LOCAL_AI_GGUF_PATH=/models/model.gguf explicitly.
+if [ -z "${LOCAL_AI_GGUF_PATH:-}" ] && [ -f "$ROOT/scripts/resolve-composer.ts" ]; then
+  gguf_path="$(node --import tsx "$ROOT/scripts/resolve-composer.ts" --field path)"
+  if [ -z "${LOCAL_AI_MODEL_ALIAS:-}" ]; then
+    alias="$(node --import tsx "$ROOT/scripts/resolve-composer.ts" --field alias)"
+  else
+    alias="$LOCAL_AI_MODEL_ALIAS"
+  fi
+else
+  gguf_path="${LOCAL_AI_GGUF_PATH:-/models/model.gguf}"
+  if [ -z "${LOCAL_AI_MODEL_ALIAS:-}" ] && [ -f "$ROOT/scripts/resolve-composer.ts" ]; then
+    alias="$(node --import tsx "$ROOT/scripts/resolve-composer.ts" --field alias 2>/dev/null || echo local-composer)"
+  else
+    alias="${LOCAL_AI_MODEL_ALIAS:-local-composer}"
+  fi
+fi
+
 upstream_port="${LOCAL_AI_LLAMA_PORT:-8080}"
 ctx="${LOCAL_AI_CTX_SIZE:-8192}"
 parallel="${LOCAL_AI_N_PARALLEL:-1}"

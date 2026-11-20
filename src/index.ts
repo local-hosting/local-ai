@@ -5,6 +5,7 @@ export {
 } from './compose/prompt-metrics.js'
 export { mapQuestion, mapReport } from './map/gliner-client.js'
 export { mapQuestionLexicon } from './map/lexicon-question.js'
+export { mapReportComposeFirst } from './map/map-compose-first.js'
 export { mapReportLexicon } from './map/lexicon-report.js'
 export { QUESTION_LABELS, REPORT_TYPES } from './types/map.js'
 export { SUPPORTED_LANGUAGES, type SupportedLanguage } from './types/vocabulary.js'
@@ -28,7 +29,18 @@ export {
   resolveCodeById,
   resolveIdByCode,
 } from './vocab/symbol-table.js'
-export { readManifest, verifyManifestFiles } from './manifest.js'
+export {
+  readManifest,
+  verifyManifestFiles,
+  resolveComposer,
+  listComposerModels,
+  composerGgufPath,
+  composerLlamaAlias,
+  modelsDirectory,
+  manifestFilePath,
+  loadActiveComposerFromManifest,
+  loadMapperFromManifest,
+} from './manifest.js'
 export {
   encodeIntentFrame,
   decodeIntentFrame,

@@ -23,4 +23,11 @@ describe('loadConfig', () => {
     expect(config.bindHost).toBe('0.0.0.0')
     expect(config.defaultModel).toBe('tenant-model')
   })
+
+  it('defaults model alias from MANIFEST chosen composer', () => {
+    delete process.env.LOCAL_AI_MODEL_ALIAS
+    delete process.env.LOCAL_AI_COMPOSE_MODEL
+    const config = loadConfig()
+    expect(config.defaultModel).toBe('qwen3-0.6b')
+  })
 })

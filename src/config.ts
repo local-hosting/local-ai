@@ -1,3 +1,8 @@
+import {
+  composerLlamaAlias,
+  readManifest,
+  resolveComposer,
+} from './manifest.js'
 import { readLocalAiEnv, readLocalAiEnvNumber } from './runtime/read-env.js'
 
 export type UpstreamAiConfig = {
@@ -35,7 +40,15 @@ function readServiceVersion(env: NodeJS.ProcessEnv): string {
 }
 
 function readDefaultModel(env: NodeJS.ProcessEnv): string {
-  return readLocalAiEnv('MODEL_ALIAS', env) || 'qwen2.5-7b'
+  const alias = readLocalAiEnv('MODEL_ALIAS', env)?.trim()
+  if (alias) return alias
+  try {
+    const composer = resolveComposer(readManifest(), { env })
+    if (composer) return composerLlamaAlias(composer)
+  } catch {
+    /* MANIFEST missing in some test sandboxes */
+  }
+  return 'local-composer'
 }
 
 export function loadUpstreamAiConfig(env: NodeJS.ProcessEnv = process.env): UpstreamAiConfig {
