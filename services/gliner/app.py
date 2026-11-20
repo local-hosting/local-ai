@@ -11,9 +11,9 @@ from pathlib import Path
 from typing import Any
 
 HOST = "127.0.0.1"
-PORT = int(os.environ.get("TF_GLINER_PORT", "8091"))
+PORT = int(os.environ.get("LOCAL_AI_GLINER_PORT", "8091"))
 CONFIDENCE_FLOOR = 0.5
-MODEL_ID = os.environ.get("TF_GLINER_MODEL", "fastino/gliner2-base-v1")
+MODEL_ID = os.environ.get("LOCAL_AI_GLINER_MODEL", "fastino/gliner2-base-v1")
 
 _CATALOG_PATH = (
     Path(__file__).resolve().parents[2] / "src" / "map" / "map-catalog.json"

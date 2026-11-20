@@ -43,8 +43,8 @@ async function main(): Promise<void> {
     const intent = await compose(
       { vocab: demoVocabFixture, event: sample.event },
       {
-        llamaBaseUrl: process.env.TF_LLAMA_BASE_URL ?? 'http://127.0.0.1:8080',
-        timeoutMs: Number(process.env.TF_EVAL_TIMEOUT_MS ?? 15_000),
+        llamaBaseUrl: process.env.LOCAL_AI_LLAMA_BASE_URL ?? 'http://127.0.0.1:8080',
+        timeoutMs: Number(process.env.LOCAL_AI_EVAL_TIMEOUT_MS ?? 15_000),
         rulesOnlyForce: false,
       },
     )

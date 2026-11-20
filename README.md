@@ -12,8 +12,8 @@ Elevation and vocab are upstream; this service accepts **IDs-only** elevated pay
 
 | Service | URL |
 |---|---|
-| Gateway | `http://127.0.0.1:8090` |
-| llama-server | `http://127.0.0.1:8080` |
+| Gateway | `http://127.0.0.1:8090` (`yarn start` or `yarn start:boot`) |
+| llama-server | `http://127.0.0.1:8080` (started by `runtime/start-llama.sh`) |
 | GLiNER sidecar | `http://127.0.0.1:8091` |
 
 ## Commands
@@ -35,6 +35,6 @@ node services/gliner/app.py
 yarn eval
 ```
 
-See `docs/` for elevate wrap, wire trade, ratings, adapters, and `OPEN_ITEMS.md`.
+See `docs/` for elevate wrap, wire trade, ratings, adapters, runtime boot, and [env.md](docs/env.md) (`LOCAL_AI_*` only).
 
 Depends on **`@local-hosting/compose`** (languages + codecs used internally). Graph: `spatial-ai → local-ai → compose → frames`. Import codecs from `@local-hosting/compose` (or `@local-hosting/frames`), not via this package’s barrel.

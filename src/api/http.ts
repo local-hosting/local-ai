@@ -19,8 +19,10 @@ export async function readJsonBody(req: http.IncomingMessage): Promise<unknown> 
   return JSON.parse(raw) as unknown
 }
 
-export function assertLoopbackHost(host: string): void {
-  if (host !== '127.0.0.1') {
-    throw new Error('must bind 127.0.0.1 only')
+import type { BindHost } from '../config.js'
+
+export function assertAllowedBindHost(host: string): asserts host is BindHost {
+  if (host !== '127.0.0.1' && host !== '0.0.0.0') {
+    throw new Error('bind host must be 127.0.0.1 or 0.0.0.0')
   }
 }

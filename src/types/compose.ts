@@ -1,9 +1,25 @@
 import type { EventSummary } from './event-summary.js'
+import type { QuestionLabel } from './map.js'
 import type { Vocabulary } from './vocabulary.js'
+
+export type ComposeQuestionLabel = QuestionLabel | 'other'
+
+export type PlaceRankingHint = {
+  id: string
+  rank: number
+  distance_m?: number
+  type?: string
+}
 
 export type ComposeRequest = {
   vocab: Vocabulary
   event: EventSummary
+  /** Resident question or report text (spatial compose). */
+  resident_text?: string
+  /** Geo-ranked place candidates shown to the composer. */
+  place_ranking?: PlaceRankingHint[]
+  /** Mapped question type (spatial path); steers prompt + narrowed actions. */
+  question_label?: ComposeQuestionLabel
 }
 
 export type PerActorIntent = {

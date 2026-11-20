@@ -1,4 +1,8 @@
 export { compose } from './compose/compose.js'
+export {
+  buildComposeMessages,
+  estimateComposePromptTokens,
+} from './compose/prompt-metrics.js'
 export { mapQuestion, mapReport } from './map/gliner-client.js'
 export { mapQuestionLexicon } from './map/lexicon-question.js'
 export { mapReportLexicon } from './map/lexicon-report.js'
@@ -51,13 +55,29 @@ export {
 export {
   loadConfig,
   loadUpstreamAiConfig,
+  type BindHost,
   type ServiceConfig,
   type UpstreamAiConfig,
 } from './config.js'
+export { readLocalAiEnv, readLocalAiEnvNumber } from './runtime/read-env.js'
 export {
   writeJson,
   readJsonBody,
-  assertLoopbackHost,
+  assertAllowedBindHost,
 } from './api/http.js'
-export { createServer, startServer } from './api/server.js'
+export { buildHealthReport } from './health.js'
+export { runGenerate, buildGenerateMessages } from './generate/generate.js'
+export { generateRequestSchema } from './generate/schemas.js'
+export { serviceInfoBody } from './api/service-info.js'
+export {
+  createServer,
+  startServer,
+  manifestVerificationErrors,
+} from './api/server.js'
+export {
+  handleLocalAiRoutes,
+  createLocalAiRouteContext,
+} from './api/local-ai-routes.js'
+export type { LocalAiRouteContext } from './api/local-ai-routes.js'
+export { isAuthorized } from './api/auth.js'
 export type * from './types/index.js'

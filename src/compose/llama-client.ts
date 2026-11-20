@@ -1,8 +1,7 @@
+import { postLlamaChatCompletions } from '../runtime/llama-loopback.js'
 import { buildComposeResponseSchema } from './dynamic-schema.js'
 import { buildComposeMessages } from './prompt.js'
-import type { EventSummary } from '../types/event-summary.js'
-import type { PerActorIntent } from '../types/compose.js'
-import type { Vocabulary } from '../types/vocabulary.js'
+import type { ComposeRequest, PerActorIntent } from '../types/compose.js'
 import type { ModelEntry } from '../types/manifest.js'
 
 export type LlamaClientOptions = {
@@ -15,25 +14,19 @@ export type LlamaComposeResult =
   | { ok: true; per_actor: PerActorIntent[]; raw: string }
   | { ok: false; reason: 'timeout' | 'http' | 'parse' | 'empty' }
 
-function normalizeLoopback(baseUrl: string): string {
-  const url = new URL(baseUrl)
-  if (url.hostname !== '127.0.0.1' && url.hostname !== 'localhost') {
-    throw new Error('llama base URL must be loopback')
-  }
-  return url.toString().replace(/\/$/, '')
-}
-
 export async function callLlamaCompose(
-  vocab: Vocabulary,
-  event: EventSummary,
+  req: ComposeRequest,
   model: ModelEntry,
   options: LlamaClientOptions,
 ): Promise<LlamaComposeResult> {
-  const root = normalizeLoopback(options.baseUrl)
-  const schema = buildComposeResponseSchema(event)
+  const schema = buildComposeResponseSchema(req.event)
   const body = {
     model: options.model || model.name,
-    messages: buildComposeMessages(vocab, event),
+    messages: buildComposeMessages(req.vocab, req.event, {
+      resident_text: req.resident_text,
+      place_ranking: req.place_ranking,
+      question_label: req.question_label,
+    }),
     temperature: 0,
     max_tokens: 512,
     response_format: {
@@ -47,14 +40,9 @@ export async function callLlamaCompose(
     chat_template_kwargs: { enable_thinking: false },
   }
 
-  const controller = new AbortController()
-  const timer = setTimeout(() => controller.abort(), options.timeoutMs)
   try {
-    const res = await fetch(`${root}/v1/chat/completions`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(body),
-      signal: controller.signal,
+    const res = await postLlamaChatCompletions(options.baseUrl, body, {
+      timeoutMs: options.timeoutMs,
     })
     if (!res.ok) return { ok: false, reason: 'http' }
     const json = (await res.json()) as {
@@ -69,7 +57,5 @@ export async function callLlamaCompose(
       return { ok: false, reason: 'timeout' }
     }
     return { ok: false, reason: 'parse' }
-  } finally {
-    clearTimeout(timer)
   }
 }

@@ -10,4 +10,4 @@ python3 -m venv services/gliner/.venv
 source services/gliner/.venv/bin/activate
 pip install -r services/gliner/requirements.txt 2>/dev/null || true
 node eval/generate-samples.mjs
-echo "After models on disk: TF_ENFORCE_MANIFEST=1 yarn start"
+echo "After models on disk: LOCAL_AI_ENFORCE_MANIFEST=1 yarn start"

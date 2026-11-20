@@ -41,7 +41,7 @@ export async function compose(
     })
   }
 
-  const llama = await callLlamaCompose(req.vocab, req.event, model, {
+  const llama = await callLlamaCompose(req, model, {
     baseUrl: options.llamaBaseUrl,
     model: model.name,
     timeoutMs: options.timeoutMs,

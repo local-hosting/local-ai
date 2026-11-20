@@ -14,6 +14,7 @@ export type {
   ComposeRequest,
   ComposeIntent,
   PerActorIntent,
+  PlaceRankingHint,
 } from './compose.js'
 export type { QuestionMapResult, ReportMapResult, QuestionLabel, ReportType } from './map.js'
 export { QUESTION_LABELS, REPORT_TYPES } from './map.js'
