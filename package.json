@@ -2,7 +2,10 @@
   "name": "@local-hosting/local-ai",
   "packageManager": "yarn@4.18.1",
   "version": "0.1.0",
-  "private": true,
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com",
+    "access": "restricted"
+  },
   "description": "Local AI: loopback map + constrained compose for many apps (no geo required).",
   "repository": {
     "type": "git",
